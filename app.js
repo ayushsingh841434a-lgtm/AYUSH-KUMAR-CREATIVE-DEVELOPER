@@ -36,6 +36,11 @@
   $$("dialog").forEach(function (d) {
     d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
   });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    var dlg = $("dialog[open]");
+    if (dlg) { e.preventDefault(); dlg.close(); }
+  });
 
   /* Menu navigation: buttons that go to real pages/sections */
   $$("[data-goto]").forEach(function (b) {
@@ -173,14 +178,32 @@
   var wallEl = $("#photoWall");
   if (wallEl) {
     var inner = $("#wallInner"), x = -300, y = -200, dragging = false, sx = 0, sy = 0;
+    var pressedSlot = null, pointerStartX = 0, pointerStartY = 0;
     function apply() { inner.style.transform = "translate(" + x + "px," + y + "px)"; }
     function clamp() {
       x = Math.max(-1600, Math.min(0, x)); y = Math.max(-1000, Math.min(0, y));
     }
     apply();
-    wallEl.addEventListener("pointerdown", function (e) { dragging = true; sx = e.clientX - x; sy = e.clientY - y; wallEl.setPointerCapture(e.pointerId); });
-    wallEl.addEventListener("pointermove", function (e) { if (!dragging) return; x = e.clientX - sx; y = e.clientY - sy; clamp(); apply(); });
-    ["pointerup", "pointercancel"].forEach(function (t) { wallEl.addEventListener(t, function () { dragging = false; }); });
+    wallEl.addEventListener("pointerdown", function (e) {
+      dragging = true; sx = e.clientX - x; sy = e.clientY - y;
+      pressedSlot = e.target.closest(".photo-slot");
+      pointerStartX = e.clientX; pointerStartY = e.clientY;
+      wallEl.setPointerCapture(e.pointerId);
+    });
+    wallEl.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      if (pressedSlot && (Math.abs(e.clientX - pointerStartX) > 4 || Math.abs(e.clientY - pointerStartY) > 4)) pressedSlot = null;
+      x = e.clientX - sx; y = e.clientY - sy; clamp(); apply();
+    });
+    ["pointerup", "pointercancel"].forEach(function (t) {
+      wallEl.addEventListener(t, function () {
+        if (t === "pointerup" && pressedSlot) {
+          var hint = $("#wallHint");
+          if (hint) hint.textContent = "No photograph added to this slot yet — add photos in content.js when ready.";
+        }
+        dragging = false; pressedSlot = null;
+      });
+    });
     wallEl.addEventListener("wheel", function (e) { e.preventDefault(); x -= e.deltaX; y -= e.deltaY; clamp(); apply(); }, { passive: false });
     wallEl.setAttribute("tabindex", "0");
     wallEl.addEventListener("keydown", function (e) {

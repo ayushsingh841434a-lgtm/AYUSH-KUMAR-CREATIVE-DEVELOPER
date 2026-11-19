@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generate the five category pages from one shared template.
 Run from ayush-portfolio/: python3 tools/gen_categories.py
-Content areas stay empty by design — see content.js."""
+The Web page includes Ayush's supplied projects; other category content stays
+placeholder-only until real content is provided in content.js."""
 import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -156,9 +157,9 @@ def card_body(kind):
     return _proj_cards(kind)
 
 PAGES = {
-    "web-developer": dict(title="Web Development", desc="Web development work by Ayush Kumar — projects to be added.",
+    "web-developer": dict(title="Web Development", desc="Five web development projects by Ayush Kumar, with project descriptions and GitHub and live-site links.",
         pill="Web Development", h1="Web Development",
-        intro="Web development work will appear here. The card structure below is ready for your projects, descriptions, and screen recordings.",
+        intro="Five web projects by Ayush Kumar are listed below with project descriptions, GitHub repositories, and live-site links.",
         body=card_body("web")),
     "app-developer": dict(title="App Development", desc="App development work by Ayush Kumar — apps to be added.",
         pill="App Development", h1="App Development",

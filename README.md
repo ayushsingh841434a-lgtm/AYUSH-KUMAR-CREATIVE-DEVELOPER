@@ -23,6 +23,15 @@ Any static server works. Opening `index.html` directly from disk also works
 for the home page and category folders, except the Netlify-style aliases
 below, which need a server or Netlify.
 
+## Browser tests
+
+The production site has no build step or runtime dependencies. Optional image
+and browser-test tools are listed in `tools/requirements.txt`. Install them with
+`py -m pip install -r tools/requirements.txt`, install Chromium with
+`py -m playwright install chromium`, start a static server on port 8000, then
+run `py tools/retest.py`. Set `PORTFOLIO_BASE_URL` to test another URL or
+`PLAYWRIGHT_CHROMIUM_EXECUTABLE` to use a specific Chromium binary.
+
 ## Structure
 
 - `index.html` — home: preloader, hero, five doors, story section, footer
@@ -36,6 +45,7 @@ below, which need a server or Netlify.
 - `tools/make-portrait.py` — dark monochrome portrait converter
 - `tools/gen_categories.py` — regenerates the five category pages
 - `netlify.toml` — Netlify redirects for reference-style URLs
+- `vercel.json` — Vercel redirects for the same section aliases
 
 ## Routes (all working)
 
@@ -47,7 +57,7 @@ below, which need a server or Netlify.
 | `/ui-ux-designer/` | Text-led case-study structure, empty |
 | `/graphic-designer/` | Scroll-line gallery structure, empty |
 | `/photographer/` | Dark floating-photo wall, empty slots |
-| `/home`, `/work`, `/my-story` | Netlify aliases to the home page sections |
+| `/home`, `/work`, `/my-story` | Netlify and Vercel redirects to home-page sections |
 
 ## The five doors
 
@@ -117,7 +127,8 @@ with publish directory `ayush-portfolio`. `netlify.toml` already maps
 `/home`, `/work`, and `/my-story`.
 
 **GitHub Pages / Vercel / any static host:** publish the folder as-is.
-No environment variables, no database, no build command.
+For Vercel, `vercel.json` maps the section aliases. No environment variables,
+database, or build command is required.
 
 ## Remaining differences from the reference (honest list)
 

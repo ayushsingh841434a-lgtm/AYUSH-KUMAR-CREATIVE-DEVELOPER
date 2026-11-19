@@ -2,8 +2,9 @@
 """Convert Ayush's photograph to the site's dark monochrome treatment.
 
 Usage (from ayush-portfolio/):
-    python3 tools/make-portrait.py /path/to/your-photo.jpg
-    python3 tools/make-portrait.py /path/to/your-photo.jpg --out images/ayush-portrait.jpg
+    python tools/make-portrait.py /path/to/your-photo.jpg
+    python tools/make-portrait.py /path/to/your-photo.jpg --out images/ayush-portrait.jpg
+    python tools/make-portrait.py --placeholder
 
 What it does — and only this:
   * converts to black and white (grayscale)
@@ -12,16 +13,17 @@ What it does — and only this:
 What it does NOT do:
   * no face change, no reshaping, no beautifying, no replacement person
   * no identity alteration of any kind
-If no argument is given, it creates the labelled monogram placeholder
-currently used in the hero, so the site never shows a fake person.
+A placeholder is created only when --placeholder is explicitly supplied.
+Running without a source photo does not alter the existing portrait.
 """
-import sys
+import argparse
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 
 def placeholder(out: Path):
+    from PIL import Image, ImageDraw, ImageFont
+
     img = Image.new("RGB", (800, 1000), (18, 18, 16))
     d = ImageDraw.Draw(img)
     d.rectangle([40, 40, 760, 960], outline=(120, 115, 100), width=3)
@@ -36,6 +38,8 @@ def placeholder(out: Path):
     print(f"Placeholder written to {out} — replace it with your real photograph.")
 
 def convert(src: Path, out: Path):
+    from PIL import Image, ImageDraw, ImageEnhance
+
     img = Image.open(src).convert("RGB")
     w, h = img.size
     target = 4 / 5
@@ -58,9 +62,16 @@ def convert(src: Path, out: Path):
     print(f"Dark monochrome portrait written to {out} from {src} (face untouched).")
 
 if __name__ == "__main__":
-    out = Path(sys.argv[sys.argv.index("--out") + 1]) if "--out" in sys.argv else ROOT / "images" / "ayush-portrait.jpg"
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    if not args:
-        placeholder(out)
+    parser = argparse.ArgumentParser(description="Create the portfolio's monochrome portrait asset.")
+    parser.add_argument("source", nargs="?", type=Path, help="source photo to convert")
+    parser.add_argument("--out", type=Path, default=ROOT / "images" / "ayush-portrait.jpg", help="output JPEG path")
+    parser.add_argument("--placeholder", action="store_true", help="explicitly write the labelled placeholder")
+    args = parser.parse_args()
+    if args.placeholder and args.source:
+        parser.error("--placeholder cannot be combined with a source photo")
+    if args.placeholder:
+        placeholder(args.out)
+    elif args.source is None:
+        parser.error("provide a source photo or use --placeholder; the existing portrait was not changed")
     else:
-        convert(Path(args[0]), out)
+        convert(args.source, args.out)
