@@ -7,8 +7,9 @@ recreating the reference site's experience from the Phase 1 investigation:
 preloader, hero with cycling roles, five coloured doors, story section,
 contact dialog, footer, and five category pages with their own structures.
 **No original owner's projects, artwork, photographs, biography, or copy are
-used.** Category and story content areas are intentionally empty until
-Ayush provides his own work.
+used.** The Web Development page showcases five projects supplied by Ayush;
+the App, UI/UX, Graphic Design, Photography, and story sections retain
+placeholders until their content is available.
 
 ## Quick start
 
@@ -27,7 +28,8 @@ below, which need a server or Netlify.
 - `index.html` — home: preloader, hero, five doors, story section, footer
 - `styles.css`, `app.js` — shared styles and behaviour
 - `content.js` — **the only file you normally edit**: identity, social links,
-  contact email, skills, story, and project arrays (all empty by default)
+  contact email, skills, story, and project data (five Web projects are
+  included; other category arrays are empty by default)
 - `web-developer/`, `app-developer/`, `ui-ux-designer/`, `graphic-designer/`,
   `photographer/` — one real folder per category route, so direct URLs work
 - `images/ayush-portrait.jpg` — hero portrait slot (see below)
@@ -40,7 +42,7 @@ below, which need a server or Netlify.
 | Route | Page |
 |---|---|
 | `/` → preloader → home | Hero, doors, story |
-| `/web-developer/` | Web project-card structure, empty |
+| `/web-developer/` | Five Web project cards and links |
 | `/app-developer/` | App-card structure, empty |
 | `/ui-ux-designer/` | Text-led case-study structure, empty |
 | `/graphic-designer/` | Scroll-line gallery structure, empty |
@@ -64,7 +66,7 @@ Font: Onest (SIL Open Font License, self-hosted in `fonts/`), matching
 the reference's typeface. Background #E8E4E0, ink #1A1818.
 
 See `AUDIT.md` for the full final audit, difference report
-(CRITICAL / MAJOR / MINOR), and test results (60/60 after fixes).
+(CRITICAL / MAJOR / MINOR), and the latest recorded test results (61/61).
 
 ## Your photograph — applied
 
@@ -91,9 +93,10 @@ in the footer and contact dialog are live:
 
 ## Adding your content later
 
-Edit only `content.js` first (arrays are empty by design), then replace the
-slot markup in the relevant category page with your real entries. Empty
-arrays render honest empty states and never break layout or navigation.
+Edit `content.js` first for new content (the Web project list is populated;
+other category arrays are empty by design), then replace the placeholder
+markup in the relevant category page. Empty arrays render honest empty states
+and never break layout or navigation.
 Do not copy anyone else's projects, artwork, or photographs into these
 slots — add only work you own.
 
