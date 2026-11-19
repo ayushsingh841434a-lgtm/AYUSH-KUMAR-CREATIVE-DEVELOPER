@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayush Kumar — Web & App Developer, UI/UX Designer</title>
+<meta name="description" content="Portfolio of Ayush Kumar. Five doors: Web Developer, App Developer, UI/UX Designer, Graphic Designer, Photographer. Content areas are ready for future work.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css">
+<script>window.__ROOT__ = "";</script>
+<script src="content.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#home">Skip to content</a>
+<div id="preloader" aria-hidden="true"><span class="pre-tl">Ayush Kumar · Portfolio</span><span class="pre-tr">Web · App · UI/UX · Graphic design</span><div class="count" id="preCount">001</div><p>Opening up the work</p></div>
+<div id="transition" aria-hidden="true"></div>
+
+<header class="topbar">
+  <span class="brand">Ayush Kumar</span>
+  <nav class="pillnav" aria-label="Primary">
+    <a href="index.html#home">Home</a>
+    <a href="web-developer/index.html">Web</a>
+    <a href="app-developer/index.html">App</a>
+    <a href="ui-ux-designer/index.html">UI/UX</a>
+    <a href="graphic-designer/index.html">Graphic</a>
+    <a href="index.html#my-story">My story</a>
+    <button data-open="contactDlg">Contact</button>
+  </nav>
+  <div class="right">
+    <span class="clock pill">Local time</span>
+    <button class="pill menu-btn" data-open="menuDlg">Menu</button>
+    <button class="cord" id="cordBtn" aria-label="Toggle dark mode" aria-pressed="false"><span class="wire"></span><span class="knob"></span><small>Dark mode (pull the cord)</small></button>
+  </div>
+</header>
+
+<main class="wrap" id="home">
+  <section class="hero" aria-label="Introduction">
+    <div>
+      <h1>Hi, I'm Ayush Kumar. I am a <span class="flip" id="roleFlip"><span class="flip-role">Web Developer</span><span class="flip-num">01 / 05</span></span>.</h1>
+      <p>Welcome to my portfolio. Choose a door below to explore each discipline.</p>
+      <p class="interests"><strong>Interests:</strong> Frontend web development · Programming · Building websites and web applications · Learning DSA using Java · Working with Git and GitHub · Using AI-assisted tools to design and build websites.</p>
+      <div class="cta">
+        <button class="btn" data-open="contactDlg">Hire me →</button>
+        <a class="btn secondary" href="#work">See my work</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="images/ayush-portrait.jpg" alt="Portrait of Ayush Kumar in dark monochrome">
+      <button class="btn ability-overlay" data-open="abilityDlg">My ability card</button>
+      <figcaption>Ayush Kumar — dark monochrome portrait.</figcaption>
+    </figure>
+  </section>
+
+  <div class="hero-strip" aria-label="Availability"><span>Available for work</span><span>Remote-first, worldwide</span><span>Scroll to explore ↓</span></div>
+
+  <section class="doors-section" id="work" aria-label="My work, one door per skill">
+    <h2>Magic happens behind the doors</h2>
+    <p class="sub">My work, one door per skill. Hover a door, then click to enter.</p>
+    <div class="door-preview" aria-live="polite">
+      <h3 id="doorPreviewTitle">Web Development</h3>
+      <p class="mono" id="doorPreviewSub">Websites &amp; tools</p>
+      <ul id="doorPreviewList"></ul>
+    </div>
+    <div class="door-wall" id="doorWall">
+      <button class="door" data-door="web" data-href="web-developer/index.html" aria-label="Open the Web Developer door"><span class="interior"></span><span class="frame"><span class="label">Web<br>Developer</span><span class="hint">Websites &amp; tools</span><span class="knobdot"></span></span></button>
+      <button class="door" data-door="app" data-href="app-developer/index.html" aria-label="Open the App Developer door"><span class="interior"></span><span class="frame"><span class="label">App<br>Developer</span><span class="hint">Apps &amp; games</span><span class="knobdot"></span></span></button>
+      <button class="door" data-door="uiux" data-href="ui-ux-designer/index.html" aria-label="Open the UI/UX Designer door"><span class="interior"></span><span class="frame"><span class="label">UI/UX<br>Designer</span><span class="hint">Interfaces</span><span class="knobdot"></span></span></button>
+      <button class="door" data-door="graphic" data-href="graphic-designer/index.html" aria-label="Open the Graphic Designer door"><span class="interior"></span><span class="frame"><span class="label">Graphic<br>Designer</span><span class="hint">Brand visuals</span><span class="knobdot"></span></span></button>
+      <button class="door" data-door="photo" data-href="photographer/index.html" aria-label="Open the Photographer door"><span class="interior"></span><span class="frame"><span class="label">Photographer</span><span class="hint">Photography</span><span class="knobdot"></span></span></button>
+    </div>
+    <div class="tooltip" id="doorTip">Click to enter</div>
+    <p class="door-note">Five doors in total. Scroll this row sideways if the fifth door is off-screen — it is there, on the right.</p>
+  </section>
+
+  <section class="section story-layout" id="my-story" aria-label="My story">
+    <div class="story-sticky"><h2>Let's go back in time.</h2><div class="big-year">—</div><p class="mono">Your period</p><p class="counter">01 / 01</p><div class="progress-line"><span style="width:100%"></span></div><p class="sub">Newest first. Add your own entries in <code>story</code> in <code>content.js</code> — nothing here claims work that is not yours.</p></div>
+    <div class="timeline">
+      <article class="timeline-item"><p class="mono">Your period</p><h3>Your timeline entry</h3><p class="secondary">Editable placeholder — your role, school, or milestone</p><ul><li>Replace this bullet with a real detail from your own history.</li><li>Add further entries in <code>story</code> in <code>content.js</code>; no biography, education, or work history has been invented for Ayush Kumar.</li></ul></article>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <h2>Need something built? Let's make it happen.</h2>
+  <p>Available for freelance work across websites, apps, interfaces, and visual content.</p>
+  <div class="cta">
+    <button class="btn" data-open="contactDlg">Hire me</button>
+    <a class="btn secondary" href="#work">See my work</a>
+  </div>
+  <div class="foot-grid">
+    <div><h3>Work</h3>
+      <a href="web-developer/index.html">Web Development</a>
+      <a href="app-developer/index.html">App Development</a>
+      <a href="ui-ux-designer/index.html">UI/UX Design</a>
+      <a href="graphic-designer/index.html">Graphic Design</a>
+      <a href="photographer/index.html">Photography</a>
+    </div>
+    <div><h3>Navigate</h3>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#my-story">My story</a>
+      <button class="pill" data-open="contactDlg">Contact</button>
+    </div>
+    <div><h3>Status</h3><p>Available for new work<br>Remote-first, worldwide<br>Deployments: Vercel for projects · Render for databases<br><small>Individual live links are shown only where verified.</small></p></div>
+    <div><h3>Connect</h3>
+      <a data-social="github" href="https://github.com/ayushsingh841434a-lgtm">GitHub</a>
+      <a data-social="linkedin" href="https://www.linkedin.com/in/ayush-singh-5b2853404/">LinkedIn</a>
+      <p>Privacy &amp; credits: add a legal page when ready.</p>
+    </div>
+  </div>
+  <p class="copy">© 2026 Ayush Kumar. Designed and built by Ayush Kumar. Privacy &amp; credits: add a legal page when ready. <button class="pill" data-top>Back to top ↑</button></p>
+  <button class="back-top-circle" data-top aria-label="Back to top">↑</button>
+</footer>
+
+<dialog id="menuDlg" aria-label="Menu">
+  <div class="menu-head"><span>Ayush Kumar</span><button class="pill" data-close>Close</button></div>
+  <h2>Menu</h2>
+  <div class="cta">
+    <button class="btn secondary" data-goto="home">01 Home</button>
+    <button class="btn secondary" data-goto="web-developer/index.html">02 Web</button>
+    <button class="btn secondary" data-goto="app-developer/index.html">03 App</button>
+    <button class="btn secondary" data-goto="ui-ux-designer/index.html">04 UI/UX</button>
+    <button class="btn secondary" data-goto="graphic-designer/index.html">05 Graphic</button>
+    <button class="btn secondary" data-goto="story">06 My story</button>
+    <button class="btn secondary" data-goto="contact">07 Contact</button>
+    <button class="btn secondary" data-goto="photographer/index.html">08 Photography</button>
+  </div>
+  <p>Photography is included here as item 08 so all five categories are reachable from the menu. The reference menu as observed listed only seven items; see README for that noted difference.</p>
+  <div class="row" style="justify-content:space-between"><span class="clock">Local time</span><button class="btn" data-goto="contact">Hire me →</button></div>
+</dialog>
+
+<dialog id="contactDlg" aria-label="Contact">
+  <button class="pill dlg-x" data-close aria-label="Close">Close</button>
+  <p class="hire-label">• Hire me</p>
+  <h2>Tell me what you need built.</h2>
+  <form id="contactForm">
+    <label>NAME <input name="name" placeholder="Your name" required></label>
+    <label>EMAIL <input name="email" type="email" placeholder="you@company.com" required></label>
+    <label>PHONE <input name="phone" placeholder="Your phone number" required></label>
+    <label>WHAT DO YOU NEED? <textarea name="message" rows="4" placeholder="Describe your project — scope, timeline, budget…" required></textarea></label>
+    <p class="form-note" id="formNote"></p>
+    <div class="row" style="justify-content:space-between"><p class="reply-note">Reply time to be confirmed once a contact email is provided.</p><button type="submit" class="btn">Send message</button></div>
+  </form>
+  <p>Or connect via <a data-social="github" href="https://github.com/ayushsingh841434a-lgtm">GitHub</a> or <a data-social="linkedin" href="https://www.linkedin.com/in/ayush-singh-5b2853404/">LinkedIn</a>.</p>
+</dialog>
+
+<dialog id="abilityDlg" aria-label="Ability card">
+  <button class="pill dlg-x" data-close aria-label="Close">Close</button>
+  <div class="ability-scene">
+    <div class="ability-card" id="abilityCard">
+      <div class="ability-face ability-front">
+        <div class="ability-portrait"><img src="images/ayush-portrait.jpg" alt="Portrait of Ayush Kumar"></div>
+        <div class="ability-stats">
+          <div class="ability-row"><span>HTML</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>CSS</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>JavaScript</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>C</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>C++</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>SQL</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>Git</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>GitHub</span><span class="ability-tag">Worked with / studied</span></div>
+          <div class="ability-row"><span>DSA using Java</span><span class="ability-tag">Currently learning</span></div>
+        </div>
+        <p class="ability-note">No proficiency percentages, ratings, or scores are shown, because none were provided. Skills and learning status come from <code>content.js</code>.</p>
+      </div>
+      <div class="ability-face ability-back"><div class="compass">◎</div><p>Ayush Kumar</p></div>
+    </div>
+  </div>
+  <p class="ability-footer">Remote-first · Worldwide · Response time to be confirmed · Drag the card to flip it</p>
+</dialog>
+</body>
+</html>

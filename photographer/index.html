@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photography — Ayush Kumar</title>
+<meta name="description" content="Photography by Ayush Kumar — photographs to be added.">
+<link rel="icon" href="../favicon.ico">
+<link rel="stylesheet" href="../styles.css">
+<script>window.__ROOT__ = "../";</script>
+<script src="../content.js" defer></script>
+<script src="../app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="transition" aria-hidden="true"></div>
+<header class="topbar">
+  <span class="brand">Ayush Kumar</span>
+  <nav class="pillnav" aria-label="Primary">
+    <a href="../index.html#home">Home</a>
+    <a href="../web-developer/index.html">Web</a>
+    <a href="../app-developer/index.html">App</a>
+    <a href="../ui-ux-designer/index.html">UI/UX</a>
+    <a href="../graphic-designer/index.html">Graphic</a>
+    <a href="../index.html#my-story">My story</a>
+    <button data-open="contactDlg">Contact</button>
+  </nav>
+  <div class="right">
+    <span class="clock pill">Local time</span>
+    <button class="pill menu-btn" data-open="menuDlg">Menu</button>
+    <button class="cord" id="cordBtn" aria-label="Toggle dark mode" aria-pressed="false"><span class="wire"></span><span class="knob"></span><small>Dark mode (pull the cord)</small></button>
+  </div>
+</header>
+<main class="wrap" id="main">
+  <div class="backbar">
+    <button class="pill" data-back>&larr; Back to the doors</button>
+    <span class="pill">Photography</span>
+  </div>
+  <section class="cat-head">
+    <h1>Photography by Ayush</h1>
+    <p>Photographs will appear here, floating in the dark. Drag, scroll, or use arrow keys to explore the wall.</p>
+  </section>
+<section class="section"><h2>Photo wall</h2>
+<div class="wall" id="photoWall" aria-label="Floating photo wall — drag, scroll, or use arrow keys">
+  <div class="wall-inner" id="wallInner">
+    <div class="photo-slot" style="left:350px;top:240px">Photo slot 1</div>
+    <div class="photo-slot" style="left:700px;top:180px">Photo slot 2</div>
+    <div class="photo-slot" style="left:1050px;top:320px">Photo slot 3</div>
+    <div class="photo-slot" style="left:520px;top:560px">Photo slot 4</div>
+    <div class="photo-slot" style="left:900px;top:640px">Photo slot 5</div>
+    <div class="photo-slot" style="left:1300px;top:560px">Photo slot 6</div>
+    <div class="photo-slot" style="left:700px;top:900px">Photo slot 7</div>
+    <div class="photo-slot" style="left:1150px;top:900px">Photo slot 8</div>
+  </div>
+  <span class="wall-hint" id="wallHint">Drag to move · Scroll · Arrow keys · Enter on a slot</span>
+</div>
+<div class="empty" style="margin-top:18px"><h3>No photographs added yet</h3><p>The wall, its movement, and its navigation work now with empty slots. Replace slots with your photographs in <code>projects.photo</code> when ready — no fake photographs are shown.</p></div></section>
+</main>
+
+<footer class="wrap">
+  <h2>Need something built? Let's make it happen.</h2>
+  <p>Available for freelance work across websites, apps, interfaces, and visual content.</p>
+  <div class="cta">
+    <button class="btn" data-open="contactDlg">Hire me</button>
+    <button class="btn secondary" data-back>Back to the doors</button>
+  </div>
+  <div class="foot-grid">
+    <div><h3>Work</h3>
+      <a href="../web-developer/index.html">Web Development</a>
+      <a href="../app-developer/index.html">App Development</a>
+      <a href="../ui-ux-designer/index.html">UI/UX Design</a>
+      <a href="../graphic-designer/index.html">Graphic Design</a>
+      <a href="../photographer/index.html">Photography</a>
+    </div>
+    <div><h3>Navigate</h3>
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#my-story">My story</a>
+      <button class="pill" data-open="contactDlg">Contact</button>
+    </div>
+    <div><h3>Status</h3><p>Available for new work<br>Remote-first, worldwide<br>Deployments: Vercel for projects · Render for databases<br><small>Individual live links are shown only where verified.</small></p></div>
+    <div><h3>Connect</h3>
+      <a data-social="github" href="https://github.com/ayushsingh841434a-lgtm">GitHub</a>
+      <a data-social="linkedin" href="https://www.linkedin.com/in/ayush-singh-5b2853404/">LinkedIn</a>
+    </div>
+  </div>
+  <p class="copy">&copy; 2026 Ayush Kumar. Designed and built by Ayush Kumar. Privacy &amp; credits: add a legal page when ready. <button class="pill" data-top>Back to top &uarr;</button></p>
+  <button class="back-top-circle" data-top aria-label="Back to top">&uarr;</button>
+</footer>
+<dialog id="menuDlg" aria-label="Menu">
+  <div class="menu-head"><span>Ayush Kumar</span><button class="pill" data-close>Close</button></div>
+  <h2>Menu</h2>
+  <div class="cta">
+    <button class="btn secondary" data-goto="home">01 Home</button>
+    <button class="btn secondary" data-goto="web-developer/index.html">02 Web</button>
+    <button class="btn secondary" data-goto="app-developer/index.html">03 App</button>
+    <button class="btn secondary" data-goto="ui-ux-designer/index.html">04 UI/UX</button>
+    <button class="btn secondary" data-goto="graphic-designer/index.html">05 Graphic</button>
+    <button class="btn secondary" data-goto="story">06 My story</button>
+    <button class="btn secondary" data-goto="contact">07 Contact</button>
+    <button class="btn secondary" data-goto="photographer/index.html">08 Photography</button>
+  </div>
+  <div class="row" style="justify-content:space-between"><span class="clock">Local time</span><button class="btn" data-goto="contact">Hire me →</button></div>
+</dialog>
+<dialog id="contactDlg" aria-label="Contact">
+  <button class="pill dlg-x" data-close aria-label="Close">Close</button>
+  <p class="hire-label">• Hire me</p>
+  <h2>Tell me what you need built.</h2>
+  <form id="contactForm">
+    <label>NAME <input name="name" placeholder="Your name" required></label>
+    <label>EMAIL <input name="email" type="email" placeholder="you@company.com" required></label>
+    <label>PHONE <input name="phone" placeholder="Your phone number" required></label>
+    <label>WHAT DO YOU NEED? <textarea name="message" rows="4" placeholder="Describe your project — scope, timeline, budget&hellip;" required></textarea></label>
+    <p class="form-note" id="formNote"></p>
+    <div class="row" style="justify-content:space-between"><p class="reply-note">Reply time to be confirmed once a contact email is provided.</p><button type="submit" class="btn">Send message</button></div>
+  </form>
+  <p>Or connect via <a data-social="github" href="https://github.com/ayushsingh841434a-lgtm">GitHub</a> or <a data-social="linkedin" href="https://www.linkedin.com/in/ayush-singh-5b2853404/">LinkedIn</a>.</p>
+</dialog>
+</body>
+</html>

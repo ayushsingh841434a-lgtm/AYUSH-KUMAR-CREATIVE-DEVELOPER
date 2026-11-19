@@ -1,0 +1,33 @@
+# Dependencies and local Python environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local secrets and environment settings
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Temporary files and logs
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+*~
+tmp/
+temp/
+
+# IDE and operating-system metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

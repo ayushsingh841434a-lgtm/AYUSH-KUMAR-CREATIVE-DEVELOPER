@@ -1,0 +1,14 @@
+# Netlify: reference-style aliases point at the home page sections.
+# Category folders are real directories, so their URLs work as-is.
+[[redirects]]
+  from = "/home"
+  to = "/index.html#home"
+  status = 200
+[[redirects]]
+  from = "/work"
+  to = "/index.html#work"
+  status = 200
+[[redirects]]
+  from = "/my-story"
+  to = "/index.html#my-story"
+  status = 200
