@@ -1,4 +1,6 @@
-# Ayush Kumar — Portfolio
+# AYUSH-KUMAR-CREATIVE-DEVELOPER
+
+## Ayush Kumar — Portfolio
 
 A static portfolio (HTML, CSS, vanilla JavaScript — no build step, no backend)
 recreating the reference site's experience from the Phase 1 investigation:
